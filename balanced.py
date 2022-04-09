@@ -1,7 +1,7 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # vim: set expandtab tabstop=4 shiftwidth=4:
 
-# Copyright (c) 2018, CJ Kucera
+# Copyright (c) 2018, 2022, CJ Kucera
 # All rights reserved.
 #   
 # Redistribution and use in source and binary forms, with or without
@@ -47,11 +47,11 @@ class Line(object):
         # Main Slider
         self.slider = QtWidgets.QSlider(QtCore.Qt.Horizontal, parent)
         self.slider.setMinimum(0)
-        self.slider.setMaximum(top*100)
+        self.slider.setMaximum(int(top*100))
         if initial_weight is None:
-            self.slider.setValue(top*100)
+            self.slider.setValue(int(top*100))
         else:
-            self.slider.setValue(initial_weight*100)
+            self.slider.setValue(int(initial_weight*100))
         self.slider.valueChanged.connect(self.slider_changed)
         self.container.addWidget(self.slider, self.index, 1)
 
@@ -148,19 +148,19 @@ class Line(object):
 
     def set_new_max(self, new_top):
         self.rescaling = True
-        self.slider.setMaximum(new_top*100)
+        self.slider.setMaximum(int(new_top*100))
         self.rescaling = False
 
     def rescale_to_new_absolute(self, new_top, value):
         self.rescaling = True
-        self.slider.setMaximum(new_top*100)
-        self.slider.setValue(value*100)
+        self.slider.setMaximum(int(new_top*100))
+        self.slider.setValue(int(value*100))
         self.rescaling = False
 
     def rescale_to_new_max(self, new_top, percent):
         self.rescaling = True
-        self.slider.setMaximum(new_top*100)
-        self.slider.setValue(new_top*100*percent)
+        self.slider.setMaximum(int(new_top*100))
+        self.slider.setValue(int(new_top*100*percent))
         self.rescaling = False
 
     def weight_edited(self):

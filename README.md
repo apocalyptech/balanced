@@ -47,11 +47,11 @@ for you.
 
 **Windows/Mac:**
 1. Install the latest Python 3.x.x version from
-  [python.org](https://www.python.org/downloads/).  The latest (as of June 8, 2018) is 3.6.5.
+  [python.org](https://www.python.org/downloads/).  The latest (as of April 8, 2022) is 3.10.4.
 2. Be sure to check the option that says something like "Add Python.exe to path"
   or "Add Python to environment variables" when installing.
 3. Hop out to a commandline/terminal/powershell and see if running the command
-  `python -V` outputs something like `Python 3.6.4`.
+  `python -V` outputs something like `Python 3.10.4`.
 4. If so, try just running `pip install PyQt5` or `pip3 install PyQt5`.  If that
   seemed to work, you may be good to go at that point!
 5. Just double-click on `balanced.py` in an Explorer/Finder window, to launch
@@ -80,6 +80,15 @@ Bugs/TODO
   in an extremely ad-hoc fashion after I got sick of dealing with weights manually.
 * Really this should be a plugin in [BLCMM](https://github.com/BLCM/BLCMods/wiki/Borderlands-Community-Mod-Manager),
   not a standalone application.
+
+Changelog
+---------
+
+**April 8, 2022**
+ - Updated with some fixes for newer Qt versions
+
+**August 3, 2018**
+ - Initial version
 
 License
 -------
