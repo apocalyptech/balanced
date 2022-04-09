@@ -85,6 +85,7 @@ Changelog
 ---------
 
 **April 8, 2022**
+ - Added text labels for rows, courtesy apple1417
  - Updated with some fixes for newer Qt versions
 
 **August 3, 2018**

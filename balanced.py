@@ -44,6 +44,11 @@ class Line(object):
         #self.lockbox.stateChanged.connect(self.lock_switched)
         #self.container.addWidget(self.lockbox, self.index, 0)
 
+        # Label
+        self.description = QtWidgets.QLineEdit('Description', parent)
+        self.description.setSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Minimum)
+        self.container.addWidget(self.description, self.index, 0)
+
         # Main Slider
         self.slider = QtWidgets.QSlider(QtCore.Qt.Horizontal, parent)
         self.slider.setMinimum(0)
@@ -85,6 +90,7 @@ class Line(object):
                     self.slider,
                     self.weightbox,
                     self.percentlabel,
+                    self.description,
                     #self.lockbox,
                     ]:
                 self.container.removeWidget(widget)
@@ -92,13 +98,13 @@ class Line(object):
                 widget = None
             self.parent.removed_line(self)
 
-    def lock_switched(self):
-        if self.lockbox.isChecked():
-            self.slider.setDisabled(True)
-            self.weightbox.setDisabled(True)
-        else:
-            self.slider.setDisabled(False)
-            self.weightbox.setDisabled(False)
+    #def lock_switched(self):
+    #    if self.lockbox.isChecked():
+    #        self.slider.setDisabled(True)
+    #        self.weightbox.setDisabled(True)
+    #    else:
+    #        self.slider.setDisabled(False)
+    #        self.weightbox.setDisabled(False)
 
     def enable_remove(self):
         self.remove_button.setDisabled(False)
